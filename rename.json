@@ -1,0 +1,4 @@
+{
+  "couch/name/_id": "couch/{%= name %}/_id",
+  "couch/name/language": "couch/{%= name %}/language"
+}
