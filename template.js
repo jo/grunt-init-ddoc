@@ -18,7 +18,7 @@ exports.notes = '_Document ID_ shouldn\'t contain spaces and should ' +
   'should not start with a number. This is only the part after _design/.';
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = 'You can now push your document via `grunt publish`';
+exports.after = 'You can now compile and push your document via `grunt deploy`';
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = id ? 'couch/' + id + '/*' : '*';
