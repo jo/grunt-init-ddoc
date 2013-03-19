@@ -14,8 +14,8 @@ var id = process.argv[3];
 exports.description = 'Create a CouchDB design document.';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = '_Document ID_ shouldn\'t contain spaces and should ' +
-  'should not start with a number. This is only the part after _design/.';
+exports.notes = '_Document ID_ must not start with an underscore. ' +
+  'This is only the part after _design/.';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You can now compile and push your document via `grunt deploy`';
@@ -36,8 +36,8 @@ exports.template = function(grunt, init, done) {
         name = name.replace(/[^\w\-\.]/g, '');
         done(null, name);
       },
-      validator: /^[\w\-\.]+$/,
-      warning: 'Must be only letters, numbers, dashes, dots or underscores.'
+      validator: /^[^_]+/,
+      warning: 'Must not start with an underscore.'
     }
   ], function(err, props) {
     // Files to copy (and process).
