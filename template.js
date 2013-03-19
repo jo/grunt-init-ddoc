@@ -32,8 +32,9 @@ exports.template = function(grunt, init, done) {
       message: 'Document ID',
       default: function(value, data, done) {
         var name = id;
-        // Remove anything not a letter, number, dash, dot or underscore.
-        name = name.replace(/[^\w\-\.]/g, '');
+        // Remove anything not a letter, number, dash, dot or underscore
+        // and leading underscores
+        name = name.replace(/[^\w\-\.]/g, '').replace(/^_+/, '');
         done(null, name);
       },
       validator: /^[^_]+/,
